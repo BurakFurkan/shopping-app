@@ -1,13 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+/* font-family: 'Ubuntu', sans-serif; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
+  width:100vw;
+  height:100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding:0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Ubuntu', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(45deg, #0f0c29, #2b1743, #511b58, #7c1866, #aa076b);
+  background-size:300% 300%;
+  animation:bgChange 12s ease infinite;
+
+  
 }
+
+@keyframes bgChange{
+  0%{
+    background-position: 0 50%;
+} 
+  50%{
+    background-position: 100% 50%;
+} 
+  100%{
+    background-position: 0 50%;
+}
+} 
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.empty-icons {
+  display: flex !important;
+  height:25px;
+}
+.filled-icons {
+  display: -webkit-inline-box !important;
+  height:25px;
+}
+
+.star-svg{
+  width:25px;
+  height:auto;
 }
