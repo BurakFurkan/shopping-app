@@ -5,35 +5,41 @@ import { motion } from "framer-motion";
 
 const Product = () => {
   const [active, setActive] = useState(null);
-  const variants = {
+  const wrapperAnimation = {
     hidden: { opacity: 0, y: 60 },
-    show: { opacity: 1, y: 0 },
-    transition: {
-      duration: 3,
-      delayChildren: 3,
-      staggerChildren: 3,
-      when: "beforeChildren",
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.05,
+        staggerChildren:0.05,
+        when:"beforeChildren",
+        stiffness:10
+
+      },
     },
   };
+
   const childAnimation = {
-    hidden: { opacity: 1, y: -60 },
-    show: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 60 },
+    show: { opacity: 1, y: 0},
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 60 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, when: "beforeChildren" }}
+      transition={{ duration: 0.5 }}
       className="group w-[350px] h-[440px] bg-blurredWhite rounded-md shadow-lg backdrop-blur-sm relative flex flex-col justify-end content-end p-2"
     >
       <img
-        className=" transition-all ease w-[220px] h-auto duration-500 absolute top-[-20px] left-[60px] -rotate-[65deg] group-hover:rotate-0 group-hover:scale-110 group-hover:drop-shadow-4xl"
+        className=" transition-all ease w-[220px]  h-auto duration-500 absolute top-[-20px] left-[60px] -rotate-[65deg] group-hover:rotate-0 group-hover:scale-110 group-hover:drop-shadow-4xl"
         src={Adidas}
         alt="shoes"
       />
       <motion.div
-        variants={variants}
+        variants={wrapperAnimation}
         initial="hidden"
         animate="show"
         className="info flex flex-col justify-end content-end gap-2 "
