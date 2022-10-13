@@ -1,14 +1,34 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Navbar from "./components/Navbar";
-import Product from './components/Product';
+import Carousel from "./components/Carousel";
+import {Foot,Hats,Tshirts} from "./ItemList";
+import CategoryBar from './components/CategoryBar';
 
 
 export default function Home() {
+  const [category,Setcategory]=useState("foot");
+  const categoryHandler = (category) =>{
+    switch (category) {
+        case "foot":
+            return Foot;
+        case "hat":
+            return Hats;
+        case "tshirts":
+            return Tshirts;
+        default:
+            return Foot;
+    }
+  }
+
+  const newCategory = categoryHandler(category)
+  useEffect(()=>{
+    console.log(category)
+  },[category])
   return (
-    <div className='text-white flex flex-col justify-between h-[100%]'>
+    <div className='text-white flex flex-col items-center h-[100%]'>
         <Navbar/>
-        <div className='w-[100%] h-[450px] text-[black] flex justify-center '><Product/></div>
-        <div className='w-[100%] h-[150px]  '> </div>
+        <Carousel {...newCategory}/>
+        <CategoryBar setcategory={Setcategory}/>
     </div>
   )
 }

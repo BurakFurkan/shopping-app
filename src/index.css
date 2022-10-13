@@ -53,3 +53,16 @@ code {
   width:25px;
   height:auto;
 }
+
+
+
+@media (min-width: 340px) { 
+  .swiper-button-prev{
+  top:45% !important;
+}
+  .swiper-button-next{
+  top:45% !important;
+}
+  
+}
+
