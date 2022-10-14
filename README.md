@@ -1,10 +1,6 @@
 React Shopping App
 
-Tailwind CSS - Framer Motion
-
-
-Note:Unfinished Project, still working on it!!!
-
+Tailwind CSS - Framer Motion - React Icons
 
 In the project directory, you can run:
 
