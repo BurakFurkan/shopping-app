@@ -28,7 +28,7 @@ const Product = ({image,price,type,stars,title,isvisible}) => {
     <AnimatePresence>
       {isvisible && (
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 60 }}
           transition={{ duration: 0.5 }}
