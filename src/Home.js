@@ -22,7 +22,7 @@ export default function Home() {
 
   const newCategory = categoryHandler(category)
   useEffect(()=>{
-    console.log(category)
+    
   },[category])
   return (
     <div className='text-white flex flex-col items-center h-[100%]'>

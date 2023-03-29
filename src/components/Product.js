@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Product = ({image,price,type,stars,title,isvisible}) => {
+const Product = ({ image, price, type, stars, title, isvisible }) => {
   const [active, setActive] = useState(null);
   const wrapperAnimation = {
     hidden: { opacity: 0, y: 60 },
@@ -35,7 +35,11 @@ const Product = ({image,price,type,stars,title,isvisible}) => {
           className="group  sm:w-[350px] h-[440px] w-[300px]  bg-blurredWhite rounded-md shadow-lg backdrop-blur-sm relative flex flex-col justify-end content-end p-2"
         >
           <img
-            className={(type===1)?"transition-all ease w-[220px]  h-[200px] object-contain duration-500 absolute top-[-70px] left-[60px] -rotate-[65deg] group-hover:rotate-0 group-hover:scale-110 group-hover:drop-shadow-4xl":"transition-all ease w-[220px]  h-[200px] object-cover duration-500 absolute top-[-50px] left-[60px]   group-hover:scale-110 group-hover:drop-shadow-4xl"}
+            className={
+              type === 1
+                ? "transition-all ease w-[220px]  h-[200px] object-contain duration-500 absolute top-[-70px] left-[60px] -rotate-[65deg] group-hover:rotate-0 group-hover:scale-110 group-hover:drop-shadow-4xl "
+                : "transition-all ease w-[220px]  h-[200px] object-cover duration-500 absolute top-[-50px] left-[60px]   group-hover:scale-110 group-hover:drop-shadow-4xl"
+            }
             src={image}
             alt="shoes"
           />
